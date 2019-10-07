@@ -83,7 +83,6 @@ const CreationPage = ({ data, pageContext }) => {
               </ul>
               <h1>{title}</h1>
               <h3>Client: {client}</h3>
-              <p>{ headerTop }</p>
             </div>
             <div className="col-md-2 btn-link-col">
               <ExternalLink
