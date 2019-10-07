@@ -15,7 +15,7 @@ import Footer from "../Footer"
 import BackToTop from "../BackToTop"
 import "./index.sass"
 
-const Layout = ({ children, bodyClass }) => {
+const Layout = ({ children, bodyClass, headerClass }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -34,8 +34,12 @@ const Layout = ({ children, bodyClass }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css"
         />
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} />
-        <main id={bodyClass}>{children}</main>
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        bodyClass={bodyClass}
+        headerClass={headerClass}
+      />
+      <main id={bodyClass}>{children}</main>
       <Footer />
       <BackToTop/>
     </>

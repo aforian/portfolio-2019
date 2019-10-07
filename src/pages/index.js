@@ -10,38 +10,7 @@ import CreationCard from "../components/CreationCard"
 import { config } from 'data';
 
 import "./index.sass"
-
-export const query = graphql`
-  query creations {
-    allMarkdownRemark(
-      sort: {
-        order: DESC
-        fields: frontmatter___date
-      }
-      filter: {
-        frontmatter: {
-          publish: {
-            eq: true
-          }
-        }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            picture
-            description
-            year
-            tags
-            slug
-          }
-          html
-        }
-      }
-    }
-  }
-`
+import "../templates/creation.sass"
 
 const IndexPage = ({ data }) => {
   const { allMarkdownRemark: { edges: creations } } = data;
@@ -49,9 +18,8 @@ const IndexPage = ({ data }) => {
   const [scrollY, setScrollY] = useState(0);
 
   const handleScroll = (e) => {
-    setScrollY(window.scrollY)
+    setScrollY(window.pageYOffset || window.scrollY)
   }
-
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
@@ -62,7 +30,9 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout bodyClass={`home`}>
-      <SEO title="Alex Ian Portfolio 2019" />
+      <SEO
+        title="Alex Ian Portfolio"
+      />
 
       <section id="hero-section" className="section">
 {/*         <HomeHero /> */}
@@ -70,12 +40,12 @@ const IndexPage = ({ data }) => {
           PORTFOLIO 2019
         </h1>
         <h3>
-          Designed by AlexIan
+          ALEX IAN
         </h3>
       </section>
 
+      <div id="my-creation"></div>
       <section id="creation-section" className="section">
-
         <div className="rects">
           <div
             className="rect rect-2"
@@ -111,21 +81,57 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
 
+      <div id="contacts"></div>
       <section id="contact-section" className="section">
         <div className="container">
           <div className="container-header">
-            <h2>CONTACT</h2>
-            <h2>聯絡方式</h2>
+            <h2>
+              CONTACTS
+            </h2>
+            <h2>
+              聯絡方式
+            </h2>
 
             <h3>Mail</h3>
             <h4>{config.mail}</h4>
           </div>
         </div>
       </section>
-
-
     </Layout>
   )
 }
+
+export const query = graphql`
+  query creations {
+    allMarkdownRemark(
+      sort: {
+        order: DESC
+        fields: frontmatter___date
+      }
+      filter: {
+        frontmatter: {
+          publish: {
+            eq: true
+          }
+        }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            picture
+            description
+            year
+            tags
+            slug
+          }
+          html
+        }
+      }
+    }
+  }
+`
+
 
 export default IndexPage

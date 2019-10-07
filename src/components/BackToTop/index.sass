@@ -13,9 +13,14 @@
     +displayFlex()
     width: 45px
     height: 45px
-    background-color: var(--secondary)
-    +box-shadow(0,0,4px,0, rgba(0,0,0,0.1))
+    background-color: rgba(white, 0.8)
+    +box-shadow(0,0,6px,0, rgba(0,0,0,0.4))
     cursor: pointer
+    color: var(--darker)
+    +transition(0.3s)
+    +hover()
+      background-color: var(--primary)
+      color: var(--white)
   &.show
     z-index: 1
     +transition(all .5s, z-index 0s)

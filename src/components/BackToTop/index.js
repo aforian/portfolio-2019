@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./index.sass"
 
 class ScrollToTop extends React.Component {
@@ -54,7 +55,9 @@ class ScrollToTop extends React.Component {
         <button
           onClick={() => this.scrollToTop() }
         >
-          TOP
+          <span className="fa-layers fa-fw fa-lg">
+            <FontAwesomeIcon icon={['fas','chevron-up']} />
+          </span>
         </button>
       </div>
     )

@@ -220,10 +220,11 @@
     @media only screen and (min-width: #{$min}px) and (max-width: #{$max}px)
       @content
 
-@mixin hover()
-  // +deviceWidth(1024, 0)
-  &:hover
-    @content
+@mixin hover($width: 768)
+  @if ($width)
+    +deviceWidth($width, 0)
+      &:hover
+        @content
 
 @mixin makeCircle($size)
   width: $size

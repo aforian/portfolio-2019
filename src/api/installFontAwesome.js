@@ -1,5 +1,11 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCircle, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircle,
+  faChevronUp,
+  faTimes,
+  faBars,
+  faBlog,
+} from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope, faComment } from '@fortawesome/free-regular-svg-icons';
 import {
   faGithub,
@@ -22,6 +28,9 @@ const installFontAwesome = () => {
     faFacebook,
     faMedium,
     faMediumM,
+    faTimes,
+    faBars,
+    faBlog,
   );
 };
 

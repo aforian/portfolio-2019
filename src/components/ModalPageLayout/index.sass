@@ -1,0 +1,28 @@
+@import "src/styles/_variables.sass"
+@import "src/styles/_mixins.sass"
+@import "src/styles/_reset.sass"
+@import "src/styles/_base.sass"
+
+.ReactModal__Body--open, .ReactModal__Html--open
+  overflow: hidden
+#modal-layout
+  padding: 0
+  margin-top: 40px
+  height: calc(100vh - 80px)
+  overflow: auto
+  +deviceWidth(1200,0)
+    max-width: 1200px
+a.modal-close-btn
+  z-index: 300
+  position: fixed
+  right: 0
+  top: 0
+  width: 50px
+  height: 50px
+  +displayFlex()
+  span
+    color: var(--white)
+    +transition(.3s)
+  +hover()
+    span
+      color: var(--secondary)

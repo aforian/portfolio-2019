@@ -21,7 +21,7 @@ main
   // +deviceWidth(1440, 0)
   //   max-width: 1140px
 
-main#creation
+main#creation, .ReactModalPortal
   #banner-section
     position: relative
     width: 100%
@@ -56,20 +56,22 @@ main#creation
     .banner-block
       +box-shadow(0,0,4px,0,rgba(black,0.2))
 
-  #content-section
-    background-color: var(--primary-darker)
-    #header-container
-      z-index: 200
-      position: sticky
-      top: 0px
+  #header-section
+    z-index: 200
+    position: sticky
+
+    background-color: var(--darker)
+    color: var(--white)
+    +deviceWidth(768,0)
+      top: $header-height
       padding-top: 25px
       padding-bottom: 30px
-      // background-color: #fff
-      background-color: var(--primary-darker)
-      background-color: var(--darker)
-      color: var(--white)
-      // border-bottom: solid 1px var(--darker)
-      // box-shadow: 0 4px 4px rgba(0,0,0,0.1)
+    +deviceWidth()
+      top: 0px
+      padding-top: 15px
+      padding-bottom: 20px
+
+    #header-container
       .content-header
         ul.tags
           margin-bottom: 3px
@@ -95,29 +97,40 @@ main#creation
         h1
           font-size: 2.5rem
           margin-bottom: 8px
+          +deviceWidth()
+            font-size: 1.4em
         h3
           font-size: 1.125rem
-        .btn-link
-          position: relative
-          display: inline-block
-          border: solid var(--darker) 2px
-          background-color: var(--white)
-          color: var(--darker)
-          padding: 10px 28px
-          font-weight: 600
-          +transition(.3s)
-          +hover()
-            background-color: var(--darker)
-            color: var(--white)
-            border-color: var(--white)
-          &:before
-            content: ''
-            position: absolute
-            left: -#{$border-width}
-            top: -#{$border-width}
-            width: calc(100% + #{$border-width} * 2)
-            height: calc(100% + #{$border-width} * 2)
-            border: solid var(--white) 2px
+        .btn-link-col
+          +deviceWidth(768,0)
+            text-align: right
+          +deviceWidth()
+            margin-top: 10px
+          .btn-link
+            position: relative
+            display: inline-block
+            border: solid var(--darker) 2px
+            background-color: var(--white)
+            color: var(--darker)
+            padding: 10px 28px
+            margin-top: $border-width
+            margin-bottom: $border-width
+            font-weight: 600
+            +transition(.3s)
+            +hover()
+              background-color: var(--darker)
+              color: var(--white)
+              border-color: var(--white)
+            &:before
+              content: ''
+              position: absolute
+              left: -#{$border-width}
+              top: -#{$border-width}
+              width: calc(100% + #{$border-width} * 2)
+              height: calc(100% + #{$border-width} * 2)
+              border: solid var(--white) 2px
+  #content-section
+    background-color: var(--primary-darker)
     #content-container
       position: relative
       padding-top: 30px
@@ -239,3 +252,14 @@ main#creation
         .title-block
           opacity: 1
 
+#modal-layout
+  #banner-section, #more-section
+    display: none
+  #header-section
+    +deviceWidth(768,0)
+      top: 0
+  #content-section
+    #content-container
+      padding-bottom: 10px
+      &:after
+        content: none

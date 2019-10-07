@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "./header.sass"
@@ -12,15 +12,18 @@ const Icon = ({ href, icon }) => (
     rel="external nofollow noopener noreferrer"
     className="custom-icon"
   >
-    <span className="fa-layers fa-fw fa-2x">
+    <span className="fa-layers fa-fw fa-lg">
       <FontAwesomeIcon icon={icon} />
     </span>
   </a>
 );
 
-const Header = ({ siteTitle }) => (
-  <header id="header">
-    <div className="container header-block">
+const Header = ({ siteTitle, bodyClass, headerClass }) => {
+  const [navActive, setNavActive] = useState(false);
+
+  return  (
+    <header id="header" className={`${navActive ? 'active' : ''} ${headerClass}`}>
+      <div className="container header-block">
         <h1>
           <Link to="/">
             {siteTitle}
@@ -28,20 +31,48 @@ const Header = ({ siteTitle }) => (
         </h1>
 
         <nav className="header-nav">
-          <ul>
+          <button
+            id="nav-menu-btn"
+            onClick={() => setNavActive(!navActive)}>
+            <span className="fa-layers fa-fw fa-2x">
+            {
+              navActive ? (
+                <FontAwesomeIcon icon={['fas','times']} />
+              ):(
+                <FontAwesomeIcon icon={['fas','bars']} />
+              )
+            }
+            </span>
+          </button>
+          <ul className={[navActive ? 'active': '']}>
 {/*             <li> */}
-{/*               <a href="">MY CREATIONS</a> */}
+{/*               <Link */}
+{/*                 to={`/page-2`} */}
+{/*                 state={{ */}
+{/*                   modal: true */}
+{/*                 }}> */}
+{/*                 Page 2 Modal */}
+{/*               </Link> */}
 {/*             </li> */}
-{/*             <li> */}
-{/*               <a href="">CONTACTS</a> */}
-{/*             </li> */}
-            <li>
+            <li onClick={() => setNavActive(false)}>
+              <Link
+                to={`/#my-creation`}>
+                MY CREATIONS
+              </Link>
+            </li>
+            <li onClick={() => setNavActive(false)}>
+              <Link
+                to={`/#contacts`}>
+                CONTACTS
+              </Link>
+            </li>
+            <li onClick={() => setNavActive(false)}>
               <Icon
                 icon={['fab', 'medium-m']}
                 href={`https://medium.com/@alexian853`}
               />
             </li>
-            <li>
+            <li onClick={() => setNavActive(false)}>
               <Icon
                 icon={['fab', 'github']}
                 href={`https://github.com/aforian/`}
@@ -49,9 +80,11 @@ const Header = ({ siteTitle }) => (
             </li>
           </ul>
         </nav>
-    </div>
-  </header>
-)
+      </div>
+    </header>
+  )
+}
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -59,6 +92,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   siteTitle: ``,
+  navScroll: false,
 }
 
 export default Header

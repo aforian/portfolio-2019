@@ -17,6 +17,11 @@ $header-height: 60px
 
 // html,body
 //   width: 100vw
+
+html, body
+  font-size: 16px
+  +deviceWidth()
+    font-size: 14px
 .section
   position: relative
   width: 100%
@@ -46,31 +51,39 @@ main#home
     h1
       +ab_center()
       color: var(--white)
-      font-size: 80px
-      letter-spacing: 10px
+      padding: 0 15px
+      font-size: 5rem
+      letter-spacing: 0.6rem
       word-break: keep-all
       white-space: nowrap
+      +deviceWidth(0,1024)
+        max-width: 100%
+        white-space: normal
+        word-break: initial
     h3
       +ab_center_h()
-      bottom: 50px
+      bottom: 80px
       color: var(--white)
-      font-size: 36px
+      font-size: 2.25rem
       letter-spacing: 2px
       word-break: keep-all
       white-space: nowrap
 
   #creation-section
-    background-color: var(--primary)
+    background-color: var(--primary-darker)
     color: var(--white)
     padding: 100px 0
+    +deviceWidth()
+      padding: 50px 0 20px
     .container
       position: relative
     .container-header
       text-align: right
-      position: absolute
-      right: 0
-      top: 0
       padding-right: 15px
+      +deviceWidth(768,0)
+        position: absolute
+        right: 0
+        top: 0
       h2
         font-size: 3.5rem
         letter-spacing: 0.25rem
@@ -91,6 +104,8 @@ main#home
   #contact-section
     background-color: var(--thirdary)
     padding: 100px 0 120px
+    +deviceWidth()
+      padding: 50px 0 60px
     .container-header
       color: var(--primary)
       h2

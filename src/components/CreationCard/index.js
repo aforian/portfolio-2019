@@ -10,7 +10,11 @@ const CreationCard = ({ creation: { node : { frontmatter } }}) => {
   return (
     <Link
       className="creation-card"
-      to={`/creation${slug}`}>
+      to={`/creation${slug}`}
+      state={{
+        modal: true,
+        noScroll: true
+      }}>
       <div className="card-header">
         <div className="img-block">
           <img

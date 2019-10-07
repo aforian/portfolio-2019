@@ -3,13 +3,18 @@
 
 #footer
   width: 100%
-  background-color: var(--thirdary)
-  color: var(--primary)
+  background-color: var(--primary-darker)
+  color: var(--white)
   min-height: 50px
   +displayFlex()
+  font-weight: 500
   .footer-block
     margin: 0 auto
-    padding: 15px 0
-    text-align: center
+    padding-top: 15px
+    padding-bottom: 15px
+    text-align: left
     a
       text-decoration: none
+    ul.social-link
+      > li
+        margin-left: 10px
