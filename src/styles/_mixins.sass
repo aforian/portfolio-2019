@@ -1,0 +1,277 @@
+@mixin keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+@mixin animation($content)
+  -webkit-animation: $content
+  -moz-animation: $content
+  -o-animation: $content
+  animation: $content
+
+@mixin transform($transform)
+  transform: $transform
+  -moz-transform: $transform
+  -o-transform: $transform
+  -webkit-transform: $transform
+
+@mixin transform-origin($value)
+  -webkit-transform-origin: $value
+  -moz-transform-origin: $value
+  -ms-transform-origin: $value
+  -o-transform-origin: $value
+  transform-origin: $value
+
+@mixin transition($transition...)
+  -webkit-transition: $transition
+  -moz-transition: $transition
+  -o-transition: $transition
+  transition: $transition
+
+@mixin justify-content($justifyContent: center)
+  -webkit-justify-content: $justifyContent
+  -moz-justify-content: $justifyContent
+  -ms-justify-content: $justifyContent
+  -o-justify-content: $justifyContent
+  justify-content: $justifyContent
+
+@mixin align-items($alignItems: center)
+  -webkit-align-items: $alignItems
+  -moz-align-items: $alignItems
+  -ms-align-items: $alignItems
+  align-items: $alignItems
+
+@mixin align-content($alignContent: center)
+  -webkit-align-content: center
+  -moz-align-content: center
+  -ms-align-content: center
+  -o-align-content: center
+  align-content: center
+
+@mixin flex-direction($flexDirection: row)
+  -webkit-flex-direction: $flexDirection
+  -moz-flex-direction: $flexDirection
+  -ms-flex-direction: $flexDirection
+  -o-flex-direction: $flexDirection
+  flex-direction: $flexDirection
+
+@mixin flex-wrap($flexWrap: nowrap)
+  -webkit-flex-wrap: $flexWrap
+  -moz-flex-wrap: $flexWrap
+  -ms-flex-wrap: $flexWrap
+  -o-flex-wrap: $flexWrap
+  flex-wrap: $flexWrap
+
+@mixin flex-flow($flexDirection: row, $flexWrap: nowrap)
+  @include flex-direction($flexDirection)
+  @include flex-wrap($flexWrap)
+
+%d-flex
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+
+@mixin d-flex()
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+
+@mixin displayFlex($flexDirection: row, $justifyContent: center, $alignItems: center, $flexWrap: nowrap)
+  @include d-flex()
+  @include flex-flow($flexDirection, $flexWrap)
+  @include justify-content($justifyContent)
+  @include align-items($alignItems)
+
+@mixin flex_box($flexDirection: row, $justifyContent: center, $alignItems: center, $flexWrap: nowrap)
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  @include flex-flow($flexDirection, $flexWrap)
+  @include justify-content($justifyContent)
+  @include align-items($alignItems)
+
+@mixin order($order: 1)
+  -webkit-order: order
+  -moz-order: order
+  -ms-order: order
+  -o-order: order
+  order: order
+
+@mixin flex-grow($flexGrow: 1)
+  -webkit-flex-grow: $flexGrow
+  -moz-flex-grow: $flexGrow
+  -ms-flex-grow: $flexGrow
+  -o-flex-grow: $flexGrow
+  flex-grow: $flexGrow
+
+@mixin flex-shrink($flexShrink: 1)
+  -webkit-flex-shrink: flexShrink
+  -moz-flex-shrink: flexShrink
+  -ms-flex-shrink: flexShrink
+  -o-flex-shrink: flexShrink
+  flex-shrink: flexShrink
+
+@mixin appearance($appearance)
+  -webkit-appearance: $appearance
+  -moz-appearance: $appearance
+  appearance: $appearance
+
+@mixin box-sizing($boxSizing: border-box)
+  -webkit-box-sizing: $boxSizing
+  -moz-box-sizing: $boxSizing
+  box-sizing: $boxSizing
+
+@mixin background-size($backgroundSize: 100% auto)
+  -webkit-background-size: $backgroundSize
+  background-size: $backgroundSize
+
+@mixin background-position($background-position: center center)
+  -webkit-background-position: $background-position
+  background-position: $background-position
+
+@mixin border-radius($borderRadius: 5px)
+  -webkit-border-radius: $borderRadius
+  -moz-border-radius: $borderRadius
+  border-radius: $borderRadius
+
+// @mixin box-shadow($value)
+//  -webkit-box-shadow: $value
+//  -moz-box-shadow: $value
+//  box-shadow: $value
+
+@mixin shadow($value)
+  -webkit-box-shadow: $value
+  -moz-box-shadow: $value
+  box-shadow: $value
+
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false)
+  @if $inset
+    -webkit-box-shadow: $top $left $blur $spread $color inset
+    -moz-box-shadow: $top $left $blur $spread $color inset
+    box-shadow: $top $left $blur $spread $color inset
+  @else
+    -webkit-box-shadow: $top $left $blur $spread $color
+    -moz-box-shadow: $top $left $blur $spread $color
+    box-shadow: $top $left $blur $spread $color
+
+// @mixin b-sh($top, $left, $blur, $spread, $color, $inset: false)
+//  +box-shadow($top, $left, $blur, $spread, $color, $inset: false)
+
+
+@mixin user-select($value: none)
+  -moz-user-select: $value
+  -webkit-user-select: $value
+
+@mixin filter($value)
+  -webkit-filter: $value
+  -ms-filter: $value
+  filter: $value
+
+@mixin ab_center()
+  position: absolute
+  top: 50%
+  left: 50%
+  +transform(translate(-50%,-50%))
+
+@mixin ab_center_h()
+  position: absolute
+  left: 50%
+  +transform(translateX(-50%))
+
+//背景置中
+@mixin bg_center()
+  background-color: transparent
+  background-position: 50% 50%
+  background-repeat: no-repeat
+
+@mixin anchor($linkColor: #000 , $visitedColor: $linkColor, $hoverColor: $linkColor, $activeColor: $lnkColor)
+  &:link
+    text-decoration: none
+    color: $linkColor
+  &:visited
+    text-decoration: none
+    color: $visitedColor
+  &:hover
+    text-decoration: none
+    color: $hoverColor
+  &:active
+    text-decoration: none
+    color: $activeColor
+
+@mixin deviceWidth($min: 0, $max: 767)
+  @if $min == 0
+    @media only screen and (max-width: #{$max}px)
+      @content
+  @else if $max == 0
+    @media only screen and (min-width: #{$min}px)
+      @content
+  @else
+    @media only screen and (min-width: #{$min}px) and (max-width: #{$max}px)
+      @content
+
+@mixin hover()
+  // +deviceWidth(1024, 0)
+  &:hover
+    @content
+
+@mixin makeCircle($size)
+  width: $size
+  height: $size
+  +border-radius($size)
+
+@mixin ratioHeight($percentTage)
+  &:before
+    content: ""
+    position: relative
+    display: inline-block
+    top: 0
+    left: 0
+    padding-top: $percentTage
+
+@mixin backgroundLinear( $gradient... )
+  background: -webkit-linear-gradient($gradient)
+  background: -moz-linear-gradient($gradient)
+  background: -ms-linear-gradient($gradient)
+  background: linear-gradient($gradient)
+
+//Vue Mounting 專用
+[v-cloak]
+  display: none
+  opacity: 0
+  transition: 0.5s
+
+%reset-Button
+  border: none
+  margin: 0
+  padding: 0
+  width: auto
+  overflow: visible
+  outline: none
+  text-align: inherit
+
+  background: transparent
+
+  /* inherit font & color from ancestor */
+  color: inherit
+  font: inherit
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit
+  -moz-osx-font-smoothing: inherit
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none
