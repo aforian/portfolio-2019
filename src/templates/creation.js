@@ -14,7 +14,7 @@ const CreationPage = ({ data, pageContext }) => {
   const { picture, title, tags = [], specials = [], client = '無', link, slug, description, headerImage } = creation.frontmatter;
   const { prev, next } = pageContext;
 
-  const [headerTop, setHeaderTop] = useState(window.innerHeight);
+  const [headerTop, setHeaderTop] = useState(9999);
   const [navScroll, setNavScroll] = useState(false);
   const headerRef = useRef(null);
 
