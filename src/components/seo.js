@@ -77,7 +77,7 @@ function SEO({
     : image;
 
   const titleTemplate = title !== site.siteMetadata.title
-    ? `%s | ${site.siteMetadata.title}`
+    ? `${title} | ${site.siteMetadata.title}`
     : title;
 
   return (
@@ -93,9 +93,9 @@ function SEO({
       <meta name="image" content={metaImage} />
 
       {/* Schema.org tags */}
-      <script type="application/ld+json">
-        {JSON.stringify(schemaOrgJSONLD(url, title, siteTitleAlt, isCreation))}
-      </script>
+{/*       <script type="application/ld+json"> */}
+{/*         {JSON.stringify(schemaOrgJSONLD(url, title, siteTitleAlt, isCreation))} */}
+{/*       </script> */}
 
       {/* OpenGraph tags */}
       <meta property="og:url" content={url} />
@@ -104,7 +104,7 @@ function SEO({
       ) : (
         <meta property="og:type" content="website" />
       )}
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={titleTemplate} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={metaImage} />
       <meta
