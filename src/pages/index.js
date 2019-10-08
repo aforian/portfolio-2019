@@ -121,6 +121,13 @@ export const query = graphql`
           frontmatter {
             title
             picture
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             description
             year
             tags

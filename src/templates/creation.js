@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/Layout"
 import ModalPageLayout from "../components/ModalPageLayout"
@@ -11,7 +12,8 @@ import "./creation.sass"
 
 const CreationPage = ({ data, pageContext }) => {
   const { markdownRemark: creation } = data;
-  const { picture, title, tags = [], specials = [], client = '無', link, slug, description, headerImage } = creation.frontmatter;
+  const { picture, title, tags = [], specials = [], client = '無', link, slug, description, headerImage, featuredImage } = creation.frontmatter;
+  const featuredImgFluid = featuredImage.childImageSharp.fluid;
   const { prev, next } = pageContext;
 
   const [headerTop, setHeaderTop] = useState(9999);
@@ -57,11 +59,19 @@ const CreationPage = ({ data, pageContext }) => {
               backgroundImage: `url(/${picture})`
             }}>
           </div>
-          <div
-            className="banner-block container"
-            style={{
-              backgroundImage: `url(/${picture})`
-            }}>
+          <div className="banner-block container">
+            <Img
+              className={'img-inner'}
+              fluid={featuredImgFluid}
+              title={title}
+              style={{
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: '100%',
+                height: '100%',
+              }}
+            />
           </div>
         </div>
       </section>
@@ -162,6 +172,13 @@ export const query = graphql`
       specials
       link
       slug
+      featuredImage {
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   }
 
@@ -178,9 +195,6 @@ export const query = graphql`
       edges {
         node {
           id
-          frontmatter {
-            title
-          }
           ...post
         }
       }

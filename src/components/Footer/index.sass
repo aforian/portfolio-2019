@@ -1,11 +1,13 @@
 @import "../../styles/_variables.sass"
 @import "../../styles/mixins.sass"
 
+$footer-height: 50px !default
+
 #footer
   width: 100%
   background-color: var(--primary-darker)
   color: var(--white)
-  min-height: 50px
+  min-height: $footer-height
   +displayFlex()
   font-weight: 500
   .footer-block

@@ -1,12 +1,13 @@
 ---
 templateKey: my-creation
 title: 阿莉芙電影官網
-slug: /2017/alifu
+slug: /2017/alifu/
 date: 2017-01-04T05:03:00.000Z
 year: 2017
 description: 這部電影是從性別開始，但更關心的是人的本質與內在靈魂，想要說一個關於性別，慾望，包容與愛的故事。
 headerImage: https://i.imgur.com/mich3dS.jpg
 picture: images/creation_alifu.png
+featuredImage: ../../static/images/creation_alifu.png
 link: http://alifu.magnifiquefilm.com/
 client: 蔓菲聯爾創意製作有限公司
 publish: true
@@ -35,6 +36,7 @@ specials:
 
 ## 作品截圖
 
-![](/images/creation_alifu-2.png)
 
-![](/images/creation_alifu-3.gif)
+![阿莉芙-1](../../static/images/creation_alifu-2.png)
+
+![阿莉芙-2](../../static/images/creation_alifu-3.gif)

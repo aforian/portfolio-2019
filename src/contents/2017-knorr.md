@@ -2,12 +2,13 @@
 templateKey: my-creation
 id: dbd6df61-ae8f-49ab-bf11-e2138085f8fa
 title: 康寶的秘密 活動網站
-slug: /2017/knorr
+slug: /2017/knorr/
 date: 2017-01-03T05:03:00.000Z
 year: 2017
 description: 首度公開！絕不能錯過康寶美味的秘密！
 headerImage: images/creation_knorr.png
 picture: images/creation_knorr.png
+featuredImage: ../../static/images/creation_knorr.png
 link: https://campaign.knorr.com.tw/soup-sustainable-sourcing/
 publish: true
 client: Unilever Taiwan
@@ -26,6 +27,6 @@ tags:
 
 ## 作品截圖
 
-![](/images/creation_knorr-2.png)
+![康寶的秘密活動網站-1](../../static/images/creation_knorr-2.png)
 
-![](/images/creation_knorr-3.png)
+![康寶的秘密活動網站-2](../../static/images/creation_knorr-3.png)

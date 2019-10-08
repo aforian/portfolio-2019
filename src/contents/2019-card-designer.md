@@ -2,12 +2,13 @@
 templateKey: my-creation
 id: dbd6df61-ae8f-49ab-bf11-e2138085f8fa
 title: 手機頁面線上編輯器
-slug: /2019/card-designer
+slug: /2019/card-designer/
 date: 2019-01-02T05:03:00.000Z
 year: 2019
 description: 視覺化拖曳式的手機網頁編輯器
 headerImage: images/creation_card_designer.png
 picture: images/creation_card_designer.png
+featuredImage: ../../static/images/creation_card_designer.png
 link: https://aforian.github.io/vue-card-designer-dist/
 client: 自主創作
 publish: true
@@ -33,7 +34,7 @@ tags:
 ![平移、拖曳、縮放](/images/creation_card_designer-2.gif)
 
 ### 群組功能
-![群組](/images/creation_card_designer-3.gif)
+![群組](../../static/images/creation_card_designer-3.gif)
 
 ### 預覽功能
-![預覽](/images/creation_card_designer-4.gif)
+![預覽](../../static/images/creation_card_designer-4.gif)

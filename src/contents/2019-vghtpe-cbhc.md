@@ -2,19 +2,23 @@
 templateKey: my-creation
 id: dbd6df61-ae8f-49ab-bf11-e2138085f8fa
 title: 臺北榮總 乳醫中心 - 醫病共享決策平台
-slug: /2019/vghtpe-cbhc
+slug: /2019/vghtpe-cbhc/
 date: 2019-01-04T05:03:00.000Z
 year: 2019
 description: 共享決策是以病人為中心的臨床醫療執行過程
 client: 臺北榮總 乳房醫學中心
 headerImage: images/creation_cbhc_vghtpe.png
 picture: images/creation_cbhc_vghtpe.png
+featuredImage: ../../static/images/creation_cbhc_vghtpe.png
 link: http://vghtpe-cbhc.sdmcare.me/healthEducation
 publish: true
 tags:
   - Vue
   - Laravel
   - 系統平台
+images:
+  - ../../static/images/creation_cbhc_vghtpe-2.png
+  - ../../static/images/creation_cbhc_vghtpe-3.png
 ---
 
 > 共享決策是以病人為中心的臨床醫療執行過程，兼具知識、溝通和尊重此三元素
@@ -29,7 +33,6 @@ tags:
 - 後端系統與後台製作
 
 ## 作品截圖
+![醫病共享決策平台-1](../../static/images/creation_cbhc_vghtpe-2.png)
 
-![](/images/creation_cbhc_vghtpe-2.png)
-
-![](/images/creation_cbhc_vghtpe-3.png)
+![醫病共享決策平台-2](../../static/images/creation_cbhc_vghtpe-3.png)

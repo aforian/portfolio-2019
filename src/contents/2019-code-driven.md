@@ -1,12 +1,13 @@
 ---
 templateKey: my-creation
 title: 程式驅動 實體課程報名平台
-slug: /2019/code-driven
+slug: /2019/code-driven/
 date: 2019-01-01T05:03:00.000Z
 year: 2019
 description: 程式學習與夏令營的實體課程報名平台
 headerImage: images/creation_code_driven.png
 picture: images/creation_code_driven.png
+featuredImage: ../../static/images/creation_code_driven.png
 link: http://cd.ntc.im/
 client: NTC.im
 publish: true
@@ -34,6 +35,6 @@ specials:
 
 ## 作品截圖
 
-![](/images/creation_code_driven-2.png)
+![程式驅動-1](../../static/images/creation_code_driven-2.png)
 
-![](/images/creation_code_driven-3.png)
+![程式驅動-2](../../static/images/creation_code_driven-3.png)

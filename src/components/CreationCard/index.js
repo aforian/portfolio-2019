@@ -1,11 +1,13 @@
-import { Link } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Img from "gatsby-image"
 import "./index.sass"
 
 const CreationCard = ({ creation: { node : { frontmatter } }}) => {
 
-  const { picture, title, description, year, tags, slug } = frontmatter;
+  const { picture, title, description, year, tags, slug, featuredImage } = frontmatter;
+  const featuredImgFluid = featuredImage.childImageSharp.fluid;
 
   return (
     <Link
@@ -17,13 +19,27 @@ const CreationCard = ({ creation: { node : { frontmatter } }}) => {
       }}>
       <div className="card-header">
         <div className="img-block">
-          <img
-            src={picture}
-            alt={title}
+          <Img
+            className={'img-inner'}
+            fluid={featuredImgFluid}
+            title={title}
+            style={{
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              width: '100%',
+              height: '100%',
+            }}
           />
+{/*           <img */}
+{/*             src={picture} */}
+{/*             alt={title} */}
+{/*           /> */}
         </div>
       </div>
       <div className="card-body">
+
+        <p>{picture}</p>
         <h3>{title}</h3>
         <p>{description}</p>
         <ul className="tags">
