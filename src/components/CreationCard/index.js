@@ -38,8 +38,6 @@ const CreationCard = ({ creation: { node : { frontmatter } }}) => {
         </div>
       </div>
       <div className="card-body">
-
-        <p>{picture}</p>
         <h3>{title}</h3>
         <p>{description}</p>
         <ul className="tags">

@@ -62,13 +62,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Alex Ian Portfolio`,
+        short_name: `Alex Ian`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `static/images/sparo-1024.png`, // This path is relative to the root of the site.
+        background_color: `#ffffff`,
+        theme_color: `#234C6A`,
+        display: `standalone`,
+        icon: `static/favicon/apple-icon.png`,
       },
     },
     `gatsby-plugin-sass`,

@@ -26,7 +26,12 @@ const Header = ({ siteTitle, bodyClass, headerClass }) => {
       <div className="container header-block">
         <h1>
           <Link to="/">
-            {siteTitle}
+            <img
+              className="logo"
+              src="/images/alexian-icon.png"
+              alt="logo"
+            />
+            <span>{siteTitle}</span>
           </Link>
         </h1>
 

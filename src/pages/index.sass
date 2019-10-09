@@ -90,7 +90,9 @@ main#home
         font-weight: bold
     .container-body
       position: relative
-      padding-top: 2em
+      padding-top: 2rem
+      +deviceWidth(768,991)
+        padding-top: 5rem
     .card-wraper
       width: calc(50% - 20px)
       +deviceWidth(768, 0)
@@ -122,6 +124,7 @@ main#home
 
   .rect
     z-index: 1
+    display: none
     // position: fixed
     position: absolute
     width: 50px

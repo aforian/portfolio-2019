@@ -20,14 +20,14 @@ const Icon = ({ href, icon }) => (
 const Footer = () => (
   <footer id="footer">
     <div className="container footer-block">
-      <div className="row justify-content-between align-items-center">
+      <div className="row justify-content-between align-items-center flex-column-reverse flex-md-row">
         <div className="col-md-6">
           <p className="copyright">
             {config.name} 2019 © All right reserved.
           </p>
         </div>
         <div className="col-md-6">
-          <ul className="social-link d-flex justify-content-end">
+          <ul className="social-link d-flex justify-content-center justify-content-md-end">
             <li>
               <Icon
                 icon={['fab', 'medium-m']}
